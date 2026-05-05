@@ -1,0 +1,1 @@
+Mukunda Rao Katta is a software and AI engineer focused on agent systems, evaluation workflows, and practical developer tooling. His recent public work spans compact evaluation artifacts, research-style software packages, and cross-platform publication workflows for AI systems.

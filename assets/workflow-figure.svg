@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="220" viewBox="0 0 980 220" role="img" aria-labelledby="title desc">
+  <title id="title">AI Eval Forge workflow figure</title>
+  <desc id="desc">A five-step workflow from case authoring to mixed checks, scoring, summaries, and release decisions.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .box { fill: #ffffff; stroke: #89a2bf; stroke-width: 2; rx: 12; }
+      .title { font: 700 22px Helvetica, Arial, sans-serif; fill: #18324a; }
+      .label { font: 700 15px Helvetica, Arial, sans-serif; fill: #18324a; }
+      .body { font: 400 13px Helvetica, Arial, sans-serif; fill: #35516b; }
+      .arrow { stroke: #5d7ea0; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#5d7ea0"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="980" height="220" rx="18"/>
+  <text class="title" x="36" y="38">AI Eval Forge mixed-check workflow</text>
+
+  <rect class="box" x="34" y="72" width="160" height="100" rx="12"/>
+  <text class="label" x="54" y="102">1. Author cases</text>
+  <text class="body" x="54" y="126">JSON or JSONL with</text>
+  <text class="body" x="54" y="145">expected values, checks,</text>
+  <text class="body" x="54" y="164">sources, cost, latency</text>
+
+  <rect class="box" x="220" y="72" width="160" height="100" rx="12"/>
+  <text class="label" x="244" y="102">2. Run checks</text>
+  <text class="body" x="244" y="126">exact, contains, regex,</text>
+  <text class="body" x="244" y="145">token F1, JSON, citations,</text>
+  <text class="body" x="244" y="164">bounded expressions</text>
+
+  <rect class="box" x="406" y="72" width="160" height="100" rx="12"/>
+  <text class="label" x="429" y="102">3. Score cases</text>
+  <text class="body" x="429" y="126">required checks decide</text>
+  <text class="body" x="429" y="145">pass or fail, mean score</text>
+  <text class="body" x="429" y="164">captures mixed evidence</text>
+
+  <rect class="box" x="592" y="72" width="160" height="100" rx="12"/>
+  <text class="label" x="615" y="102">4. Summarize suite</text>
+  <text class="body" x="615" y="126">pass rate, average score,</text>
+  <text class="body" x="615" y="145">cost, latency, failed</text>
+  <text class="body" x="615" y="164">checks in markdown</text>
+
+  <rect class="box" x="778" y="72" width="168" height="100" rx="12"/>
+  <text class="label" x="802" y="102">5. Ship or fix</text>
+  <text class="body" x="802" y="126">use results in local runs,</text>
+  <text class="body" x="802" y="145">CI, release checks, and</text>
+  <text class="body" x="802" y="164">agent workflow audits</text>
+
+  <line class="arrow" x1="194" y1="122" x2="218" y2="122"/>
+  <line class="arrow" x1="380" y1="122" x2="404" y2="122"/>
+  <line class="arrow" x1="566" y1="122" x2="590" y2="122"/>
+  <line class="arrow" x1="752" y1="122" x2="776" y2="122"/>
+</svg>

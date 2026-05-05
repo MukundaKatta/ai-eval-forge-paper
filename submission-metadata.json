@@ -1,0 +1,20 @@
+{
+  "title": "AI Eval Forge: Mixed-Check Regression Testing for LLM and Agent Workflows",
+  "author": "Mukunda Rao Katta",
+  "artifact_repo": "https://github.com/MukundaKatta/ai-eval-forge-js",
+  "license": "MIT",
+  "publication_targets": [
+    "Zenodo",
+    "OSF Preprints",
+    "SSRN"
+  ],
+  "keywords": [
+    "AI evaluation",
+    "LLM regression testing",
+    "agent evaluation",
+    "software testing",
+    "structured outputs",
+    "citation grounding",
+    "developer tooling"
+  ]
+}

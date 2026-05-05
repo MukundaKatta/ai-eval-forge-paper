@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "AI Eval Forge: Mixed-Check Regression Testing for LLM and Agent Workflows"
+message: "If you use this manuscript bundle, please cite the preprint record once it is published."
+type: article
+authors:
+  - family-names: "Katta"
+    given-names: "Mukunda Rao"
+repository-code: "https://github.com/MukundaKatta/ai-eval-forge-js"
+abstract: "Large-model and agent teams often need faster regression checks than broad benchmark suites can provide. This paper presents AI Eval Forge, a zero-dependency evaluation harness for mixed-check regression testing across LLM and agent workflows."
+license: "CC-BY-4.0"
