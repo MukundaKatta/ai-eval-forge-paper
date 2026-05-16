@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  artifact-checks:
+    name: Artifact checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Validate paper artifacts
+        run: |
+          python -m py_compile render_preprint_pdf.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import render_preprint_pdf as pdf
+
+          required = [
+              "paper.md",
+              "paper.bib",
+              "assets/workflow-figure.svg",
+              "submission-metadata.json",
+              "ai-eval-forge-mixed-check-regression-testing-preprint.pdf",
+          ]
+          for name in required:
+              path = Path(name)
+              if not path.is_file() or path.stat().st_size == 0:
+                  raise SystemExit(f"Missing or empty artifact: {name}")
+
+          json.loads(Path("submission-metadata.json").read_text())
+          blocks = pdf.extract_blocks(Path("paper.md").read_text())
+          if not any(kind == "title" for kind, _ in blocks):
+              raise SystemExit("paper.md did not produce a title block")
+          print(f"Validated {len(blocks)} paper blocks")
+          PY

@@ -31,3 +31,23 @@ This bundle is prepared for:
 ## Citation
 
 Use the versioned preprint record once published.
+
+## Quality Gate
+
+Run the artifact checks before publishing a revised bundle:
+
+```bash
+python -m pip install -r requirements.txt
+python -m py_compile render_preprint_pdf.py
+python - <<'PY'
+import json
+from pathlib import Path
+import render_preprint_pdf as pdf
+
+json.loads(Path("submission-metadata.json").read_text())
+assert any(kind == "title" for kind, _ in pdf.extract_blocks(Path("paper.md").read_text()))
+PY
+```
+
+The GitHub Actions workflow also verifies that the manuscript source,
+bibliography, figure, metadata, and generated preprint PDF are present.
